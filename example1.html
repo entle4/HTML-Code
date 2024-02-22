@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Age Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+  
+  <script>
+    function calcAge() {
+      var birthYear = document.getElementById("birthYear").value;
+
+      // Check if the input is a valid year
+      if (isNaN(birthYear) || birthYear.length !== 4) {
+        alert("Please enter a valid 4-digit year.");
+        return;
+      }
+
+      var userNumber = parseInt(birthYear, 10);
+      var today = new Date();
+      var currentYear = today.getFullYear();
+      var age = currentYear - userNumber;
+
+      document.getElementById("result").innerHTML = "Your age is: " + age;
+    }
+  </script>
+</head>
+<body>
+  <h2>Age Calculator</h2>
+  <label for="birthYear">Enter your Year of Birth:</label>
+  <input type="text" id="birthYear" placeholder="yyyy" maxlength="4">
+  <button onclick="calcAge()">Calculate Age</button>
+  <p id="result"></p>
+</body>
+</html>
