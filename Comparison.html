@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+<title>Number Comparison</title>
+
+<script>
+function compareNumber(){
+//Get user input
+var userInput = document.getElementById("userInput").value;
+
+
+
+//Convert input to a number 
+var userNumber = parseFloat(userInput);
+
+//compare with 10
+var comparisonResult = (userNumber > 10) ? "higher" : "lower";
+
+//calculate difference 
+var difference = Math.abs(10 - userNumber);
+
+//Display results
+document.getElementById("result").innerHTML = "The number is " + comparisonResult+ " than 10.";
+document.getElementById("difference").innerHTML = "The difference between 10 and the Entered number is: " + difference;
+
+}
+
+</script>
+</head>
+
+<body>
+<h2>Number Comparison</h2>
+<br>
+<label for="userInput">Enter a number: </label>
+<input type="text" id="userInput">
+<br>
+<button onclick="compareNumber()">Compare</button>
+
+<div id="result"></div>
+<div id="difference"></div>
+<br>
+</body>
+
+</html>
